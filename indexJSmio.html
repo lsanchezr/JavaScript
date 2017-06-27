@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejemplo General</title>
+</head>
+<body>
+  <h1><span id="cade" onclick="cadena()">Ejemplo Html y JavaScript</span></h1>
+<div class="Formulario">
+  <form>
+    <span>Nombre: </span>
+    <input type="text" name="" id="nom">
+    <span>Apellido Paterno: </span>
+    <input type="text" name="" id="ap">
+    <span>Apellido Materno: </span>
+    <input type="text" name="" id="am">
+    <button type="button" name="button" onclick="contar()">Contar</button>
+    <div class="nombrecom">
+      Nombre Completo:<input type="text" name="" id="nc">
+    </div>
+
+  </form>
+  <div class="formMultiplicar">
+    <p>Operación Multiplicar</p>
+    <form id="multiplicar">
+    <input type="text" id="multiplicando"> x
+    <input type="text" id="multiplicador"> =
+    <input type="text" id="resultado">
+    <button type="button" name="button" onclick="multiplicar()">Multiplicar</button>
+  </form>
+  </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+  function cadena(){
+    var h1=document.getElementById('cade').innerHTML;
+    document.getElementById('cade').innerHTML="Este es un ejemplo para contar caracteres utilizando la propiedad .length"
+    alert(h1.length);
+  }
+  function contar(){
+    var nom=document.getElementById('nom').value;
+    var ap=document.getElementById('ap').value;
+    var am=document.getElementById('am').value=multiplicar();
+    var total=(nom) + (ap) + (am);
+
+    alert('Tu nombre tiene: '+nom.length+' caracteres'+', '+'tu apellido Paterno: '+ap.length+' y '+'tu Apellido Materno: '+ am.length + ','+' En total tu nombre tiene: ' + total.length +' caracteres.');
+    document.getElementById('nc').value=total;
+
+  }
+  function multiplicar(){
+  m1 = document.getElementById("multiplicando").value;
+  m2 = document.getElementById("multiplicador").value;
+  r = m1*m2;
+
+
+  document.getElementById("resultado").value = r;
+  return r;
+}
+
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML JS</title>
+</head>
+<body >
+  <div class="container">
+    <div class="Fun1"><!-- Creadndo la primera función en JS -->
+      <h1 id="hola">Buen día</h1><!-- Heading -->
+      <button type="button" name="button" onclick="miprimerfuncion()">Click</button><!-- Creamos un boton con el evento onclick que su funcion es ejecutar la función al dar un click sobre el elemento -->
+    </div>
+
+    <div class="contar">
+      <input type="text" name="" id="nombre"><!-- Declaramos una caja de entrada -->
+      <button type="button" name="button" onclick="nombre()">Contar</button>
+      <!-- Mandamos llamar a la funcion contar para que realice el conteo de el texto introducido en la caja -->
+    </div>
+
+    <div class="operaciones">
+      <div class="sumas">
+        <input type="text" id="suma"><!-- Declaramos una caja de entrada -->
+        <span>+</span><!-- Declaramos un span como etiqueta -->
+        <input type="text" id="suma1"><!-- Declaramos una caja de entrada -->
+        <span>=</span><!-- Declaramos un span como etiqueta -->
+        <span id="suma2"></span><!-- Declaramos un span con id para imprimir el resultado de la operación -->
+        <button type="button" name="button" onclick="suma()">Suma</button><!-- Mandamos a llamar a la función suma para que ejecutar con el evento onclick -->
+      </div>
+
+      <div class="restas">
+        <input type="text" id="resta"><!-- Declaramos una caja de entrada -->
+        <span>-</span><!-- Declaramos un span como etiqueta -->
+        <input type="text" id="resta1"><!-- Declaramos una caja de entrada -->
+        <span>=</span><!-- Declaramos un span como etiqueta -->
+        <span id="resta2"></span><!-- Declaramos un span con id para imprimir el resultado de la operación -->
+        <button type="button" name="button" onclick="resta()">Resta</button><!-- Mandamos a llamar a la función resta para que ejecutar con el evento onclick -->
+      </div>
+
+        <button type="button" name="button" onclick="operaciones()">Realizar operaciones</button>
+        <!-- Mandamos a llamar a la función operaciones para que realice ambas operaciones 'anidación de funciones' -->
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  function miprimerfuncion(){
+    /* 'var',Los tipos de variables se declaran de la misma manera no ahi una palabra reservada o algo que las defina como una unidad de medida, solo la declaramos y definimos el nombre y su contenido*/
+    var num=1456;
+    var float=12.1;
+    var cadena='texto';
+    var desicion=true;
+    var txt=document.getElementById('hola').innerHTML;
+    /*Un ''.innerHTML' lo vamos a utilizar cuando se traten de cualquier etiqueta que html la defina como tal*/
+    console.log(txt+' '+float+' '+cadena+' '+desicion+' '+num);
+    /*Manera de concatenar e imprimir variables en un console*/
+    document.getElementById('hola').innerHTML='Hoy es martes';
+    alert(txt.length);//Manera de mandar un alerta
+    // nombre(); Ejecucion de dos funciones
+  }
+
+  function nombre(){
+    var nom=document.getElementById('nombre').value;
+    /*Un '.value' lo vamos a utilizar cuando se trate de un radio button, un check box, input, todos los elementos que sean de entrada*/
+    if (nom.length<=9){
+      console.log('tiene menos letras');/*Manera de mandar un mensaje a consola*/
+    }else if(nom.length>=10) {/*Estructura de un 'if'*/
+      alert('El texto tiene: '+nom.length +' caracteres');
+      document.getElementById('nombre').value=suma();/*Recuperando el valor de suma que fue mandado con el return*/
+    }
+    console.log(nom.length);
+    var retursuma=suma();
+    console.log(suma());
+  }
+  // function suma(nom){ forma de declarar un parametro en una funcion
+  function suma(){
+    /*alert(nom); para imprimir el parametro de la función*/
+    var n1=document.getElementById('suma').value;
+    var n2=document.getElementById('suma1').value;
+    var suma = parseInt(n1) + parseInt(n2);
+            // alert("La suma es: "+suma)
+    document.getElementById('suma2').innerHTML=suma;
+    return suma; /*Retornando el valor de suma*/
+    // alert('return');
+  }
+  function resta(){
+    /*Comentario multi-linea*/
+    var n1=document.getElementById('resta').value;
+    var n2=document.getElementById('resta1').value;
+    var resta = parseInt(n1) - parseInt(n2);
+            // alert("La resta es: "+resta)
+    document.getElementById('resta2').innerHTML=resta;
+  }
+  function operaciones(){//Esta función ejecuta ambas operaciones, anidación de funciones.
+    suma();
+    resta();
+  }
+</script>
+</html>
