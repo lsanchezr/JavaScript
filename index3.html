@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS 3</title>
+</head>
+<body>
+<div id="contenedor">
+<div id="main">
+
+</div>
+</div>
+<select id="se1"></select>
+<br>
+<br>
+<input type="text" name="" value="" id="in1">
+<button type="button" name="button" onclick="functionSwitch()">Botón 1</button>
+
+<p id="fecha"></p>
+<p id="fe"></p>
+
+</body>
+<script>
+
+  document.getElementById("contenedor").innerHTML = "<b>Etiqueta para poner el texto en negritas</b>";
+  document.write("<p>Este es un paragraph con JavaScript</p>");
+  document.write("<h1><font color='red'>Este es un H1 con JavaScript</font></h1>")
+
+/*Función para el ciclo for ejemplo ejecutado con condiciones if*/
+function functionFor() {
+  var x = document.getElementById("se1");
+  for (var i = 0; i <= 50; i+=5) {
+    var c = document.createElement("option");
+if (i>5) {
+  c.text = 'b '+i;
+  x.options.add(c);
+}
+else if (i<=5) {
+  c.text = 'a '+i;
+  x.options.add(c);
+}
+    // console.log(i);para imprimir el ciclo for en la consola
+    // console.log("<option value=''>"+i+"</option>");
+    // document.write("<p>"+i+"</p>");para imprimir el ciclo for
+    if (i>10) {
+      break;
+    }
+  }
+}
+  functionFor();/*Aqui mandamos ejecutar la función */
+
+  function functionWhile(){
+    var i=1;
+    var t=true;
+    while (i<4) {
+      i++;
+      console.log(i);
+    }
+  }
+  functionWhile();
+
+  function functionDoWhile(){
+    var i=15;
+    do {
+      console.log(i);
+      i++;
+    } while (i<4);
+  }
+  functionDoWhile();
+
+  function functionSwitch(){
+    // console.log('funciona');
+    var sw=document.getElementById('in1').value;
+    switch (sw) {
+      case 'a':
+        alert('detecta la letra a');
+        break;
+      case '1':
+        alert('este case es numerico');
+        break;
+      default:
+       alert('no encontro nada');
+    }
+  }
+
+function Arreglos(){
+  var ar=['hola',12,12.1,true,[1,4.4]];
+
+    var arr=[
+    [1,2],
+    [3,4],
+    [5,6]
+    ];
+
+    for(var i=0; i<3; i++){
+      for(var c=0; c<2; c++){
+      	console.log(arr[i][c]);
+      }
+      console.log(arr[i]);
+    }
+}
+  Arreglos();
+
+function objetos(){
+  var ar={'"0"':'hola','1':12,'adios':12.1,'4':true,'2':{'c':1,'b':4.4},'e':false, 'r':[3,3]};
+    console.log(ar);
+}
+  objetos();
+
+// document.getElementById('fecha').innerHTML=Date();/*Manera de obtener la fecha de forma automatica*/
+function fecha(){
+  var d = new Date();
+  document.getElementById("fecha").innerHTML = d;
+  document.getElementById("fecha").innerHTML = new Date("06, 28, 2017");  
+}
+fecha();
+
+
+</script>
+</html>

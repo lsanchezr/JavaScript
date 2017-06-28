@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Repaso JS y HTML</title>
+</head>
+<body>
+<div id="header"></div>
+<div id="nav"></div>
+<div id="main">
+  <section>
+    <input type="text" name="" value="" id="sw1">
+    <button type="button" name="button" onclick="Switch()">Menu</button>
+  </section>
+  <aside></aside>
+</div>
+<div id="footer">
+  <p id="fecha"></p>
+</div>
+</body>
+<script>
+// var fecha = new Date();
+// document.getElementById('fecha').innerHTML=fecha;
+document.getElementById("header").innerHTML = "<h1>Repaso con HTML y JavaScript.</h1>";
+document.write("<p>Elige una Opción:</p>");
+document.write("<p>1: Desayuno</p>");
+document.write("<p>2: Comida</p>");
+document.write("<p>3: Cena</p>");
+function Switch() {
+  var sw = document.getElementById('sw1').value;
+  switch (sw) {
+    case '1':
+        document.write("<p>En el desayuno ahi huevos revueltos</p>");
+      break;
+    case '2':
+        document.write("<p>En la comida ahi enchiladas verdes</p>");
+      break;
+    case '3':
+        document.write("<p>En la cena ahi hotcakes y leche de fresa</p>");
+      break;
+    default:
+        alert('Ninguna de las anteriores');
+  }
+}
+document.write("<br />");
+document.write("<p>Multiplicación</p>")
+function For() {
+  var i=2, j, rm;
+    for (j = 1; j <=10; j++){
+        rm = i * j;
+      document.write(i);
+      document.write("x");
+      document.write(j);
+      document.write("=");
+      document.write(rm);
+      document.write("<br />");
+      console.log(rm);
+  }
+}
+For();
+function fecha(){
+  var myDate = new Date();
+  var myDate = new Date();
+document.write("<p>Fecha Actual: </p>");
+document.write(( myDate.getMonth() + 1) + "-" + myDate.getDate() + "-" + myDate.getFullYear());
+}
+
+fecha();
+</script>
+</html>
